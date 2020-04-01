@@ -55,9 +55,14 @@ class ExploreFragment : Fragment() {
         val layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         val adapter = CustomAdapter(data)
+        val miniAdapter = miniAdapter(data)
 
         rvlist.layoutManager = layoutManager
         rvlist.setHasFixedSize(true)
         rvlist.adapter = adapter
+
+        child_rvlist.layoutManager = layoutManager
+        child_rvlist.setHasFixedSize(true)
+        child_rvlist.adapter = miniAdapter
     }
 }
